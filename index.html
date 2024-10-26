@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio de Fernando</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="theme-toggle">
+        <span class="icon" id="dark-mode" title="Modo Escuro">🌙</span>
+        <span
+          class="icon"
+          id="light-mode"
+          title="Modo Claro"
+          style="display: none"
+          >☀️</span
+        >
+      </div>
+    </header>
+
+    <main>
+      <div class="typing-effect" id="typing-text"></div>
+      <h2>
+        <img
+          src="Portifolio.jpeg"
+          alt="Foto de Fernando"
+          width="200px"
+          height="auto"
+          class="profile-pic"
+        />
+      </h2>
+      <h1>Fernando Rena</h1>
+      <div id="about">
+        <h3>About</h3>
+        <div class="social-icons">
+          <a
+            href="https://www.linkedin.com/in/fernando-oliveira-rena-1b4060304/"
+            target="_blank"
+            title="LinkedIn"
+          >
+            <img src="iconlinkedin.png" alt="" width="54" />
+          </a>
+          <a
+            href="https://github.com/FernandoOli17"
+            target="_blank"
+            title="github"
+          >
+            <img src="icongithub.png" alt="" width="54" />
+          </a>
+        </div>
+        <p class="centralizado2">
+          Sou Fernando de Oliveira Rena, estudante do 2º ano do ensino médio e
+          curso técnico no Colégio Cotemig. Ao longo da minha jornada,
+          desenvolvi habilidades em redes, HTML, CSS, JavaScript, Python, C# e
+          banco de dados. Estou sempre em busca de aprimorar minhas competências
+          e aplicar meu conhecimento em projetos práticos. Seja construindo
+          páginas web, desenvolvendo scripts ou gerenciando dados, tenho uma
+          paixão por resolver problemas e criar soluções eficientes.
+        </p>
+      </div>
+
+      <h1>Projects</h1>
+      <div class="carousel">
+        <div class="slides">
+          <img src="projeto1.png" alt="Imagem do Projeto 1" />
+        </div>
+        <div class="centralizado">
+          <h4>Projeto: Site de Delivery de Comida Mexicana</h4>
+          <br />
+          No intuito de trazer a vibrante cultura mexicana para a nossa escola,
+          estou desenvolvendo um site de delivery de comida mexicana que visa
+          facilitar o acesso a deliciosos pratos para alunos, professores e
+          funcionários. O projeto tem como principal objetivo oferecer uma
+          experiência gastronômica única, promovendo a culinária rica e variada
+          do México.
+        </div>
+        <div class="button-borders">
+          <a
+            href="https://www.figma.com/design/LzsJFEZID4DFCwhgkMMfjs/Untitled?node-id=0-1&node-type=canvas&t=xje5pDRFHk5hqYLS-0"
+            class="primary-button"
+            class="button-borders"
+            >See More</a
+          >
+        </div>
+
+        <div class="espaco2"></div>
+        <div class="slides2">
+          <img src="projeto2.png" alt="Imagem do Projeto 2" height="500px" />
+        </div>
+        <h5>O projeto "Ogani"</h5>
+        <div id="organizar">
+          O projeto "Ogani" é um site dedicado à promoção e venda de produtos
+          veganos, alinhado com a crescente demanda por opções alimentares mais
+          sustentáveis e saudáveis. Este site visa fornecer uma plataforma onde
+          consumidores conscientes podem encontrar uma variedade de produtos,
+          desde alimentos e bebidas até cosméticos e utensílios de cozinha,
+          todos de origem vegetal
+        </div>
+      </div>
+      <div class="espaco2"></div>
+      <a
+        href="https://github.com/FernandoOli17/Ogani-Template"
+        class="button-borders"
+        class="button-borders2"
+      >
+        <button class="primary-button2">See More</button>
+      </a>
+    </main>
+
+    <section id="contact">
+      <h2>Contato</h2>
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="name">Nome:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Seu nome"
+            required
+          />
+        </div><div class="form-group">
+        <label for="email">E-mail:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Seu e-mail"
+          required
+        /></div>
+        <div class="form-group">
+          <label for="message">Mensagem:</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Sua mensagem"
+            required
+          ></textarea>
+        </div>
+      </form>
+      <div class="button-borders">
+        <button class="primary-button">Send</button>
+      </div>
+    </section>
+
+    <script>
+      const text = "Software Developer";
+      let index = 0;
+      let deleting = true;
+
+      function type() {
+        const textContainer = document.getElementById("typing-text");
+
+        if (!deleting) {
+          if (index < text.length) {
+            textContainer.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 120); // tempo entre as letras digitadas
+          } else {
+            deleting = false; // comece a apagar o texto
+            setTimeout(type, 2000); // espera 2 segundos antes de começar a apagar
+          }
+        } else {
+          if (index > 0) {
+            textContainer.innerHTML = text.substring(0, index - 1);
+            index--;
+            setTimeout(type, 100); // tempo entre as letras apagadas
+          } else {
+            deleting = false; // comece a digitar novamente
+            index = 0; // reinicie o índice
+            setTimeout(type); // espera 0.5 segundos antes de começar a digitar novamente
+          }
+        }
+      }
+
+      type();
+    </script>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p>
+          &copy; 2024 Fernando de Oliveira Rena. Todos os direitos reservados.
+        </p>
+        <ul class="socials">
+          <li>
+            <a href="https://github.com/FernandoOli17"
+              ><i class="fab fa-github"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/nandim.17/"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/fernando-oliveira-rena-1b4060304/"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script>
+      const body = document.body;
+      const darkModeToggle = document.getElementById("dark-mode");
+      const lightModeToggle = document.getElementById("light-mode");
+
+      darkModeToggle.addEventListener("click", () => {
+        body.classList.add("dark-mode");
+        darkModeToggle.style.display = "none";
+        lightModeToggle.style.display = "inline";
+      });
+
+      lightModeToggle.addEventListener("click", () => {
+        body.classList.remove("dark-mode");
+        lightModeToggle.style.display = "none";
+        darkModeToggle.style.display = "inline";
+      });
+    </script>
+  </body>
+</html>
